@@ -107,7 +107,7 @@
 
   <div class="lx-entry padding">
     <div>
-      <h2 class="title"><a href="/2021/05/29/Linux-c-%E7%BC%96%E8%AF%91/">Linux C++链接错误</a></h2>
+      <h2 class="title"><a href="/posts/1db9c1b9/">Linux C++链接错误</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2021-05-29</span>
       <p><h1 id="Linux-C-编译链接时报错：对‘check-std-cxx11-basic-string-lt-char-std-char-traits-std-allocator-gt-const-amp-’未定义的引用"><a href="#Linux-C-编译链接时报错：对‘check-std-cxx11-basic-string-lt-char-std-char-traits-std-allocator-gt-const-amp-’未定义的引用" class="headerlink" title="Linux C++ 编译链接时报错：对‘check(std::__cxx11::basic_string&lt;char, std::char_traits, std::allocator &gt; const&amp;)’未定义的引用"></a>Linux C++ 编译链接时报错：对‘check(std::__cxx11::basic_string&lt;char, std::char_traits<char>, std::allocator<char> &gt; const&amp;)’未定义的引用</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li>CentOS 8</li>
@@ -132,7 +132,29 @@
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24342312/clang-seems-to-use-the-gcc-libraries">clang seems to use the gcc libraries</a></p>
 </blockquote>
 </p>
-      <div class="post-button"><a class="btn" href="/2021/05/29/Linux-c-%E7%BC%96%E8%AF%91/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+      <div class="post-button"><a class="btn" href="/posts/1db9c1b9/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/posts/3bef52ce/">python3 pip安装包时报错</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2021-01-31</span>
+      <p><h1 id="Python3-pip安装包时出现ModuleNotFoundError-No-module-named-‘-ctypes’"><a href="#Python3-pip安装包时出现ModuleNotFoundError-No-module-named-‘-ctypes’" class="headerlink" title="Python3 pip安装包时出现ModuleNotFoundError: No module named ‘_ctypes’"></a>Python3 pip安装包时出现ModuleNotFoundError: No module named ‘_ctypes’</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>   CentOS 7.6</li>
+<li>   Python 3.8.7</li>
+</ul>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>python3中有个内置模块叫ctypes，它是Python3的外部函数库模块，它提供兼容C语言的数据类型，并通过它调用Linux系统下的共享库(Shared library)，此模块需要使用CentOS7系统中外部函数库(Foreign function library)的开发链接库(头文件和链接库)。</p>
+<p>由于在CentOS7系统中没有安装外部函数库(libffi)的开发链接库软件包，所以在安装pip的时候就报了”ModuleNotFoundError: No module named ‘_ctypes’”的错误。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>yum安装libffi-devel</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install libffi-devel</span><br></pre></td></tr></table></figure>
+<p>然后重新编译安装python3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/69681655309b">Python3.7.0以上版本安装pip报错ModuleNotFoundError: No module named ‘_ctypes’解决方法</a></p>
+</blockquote>
+</p>
+      <div class="post-button"><a class="btn" href="/posts/3bef52ce/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
 
